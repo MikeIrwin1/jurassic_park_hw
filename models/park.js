@@ -46,4 +46,12 @@ Park.prototype.deleteSpecies = function (species) {
   }
   this.dinosaurs.splice(indexOf,1);
 };
+
+Park.prototype.visitsPerDay = function () {
+  let dailyVisits =0;
+  for (let i=0; i<=this.dinosaurs.length-1; i++) {
+    dailyVisits += this.dinosaurs[i].guestsAttractedPerDay;
+  }
+  return dailyVisits;
+};
 module.exports = Park;
