@@ -48,10 +48,16 @@ Park.prototype.deleteSpecies = function (species) {
 };
 
 Park.prototype.visitsPerDay = function () {
-  let dailyVisits =0;
+  let dailyVisits = 0;
   for (let i=0; i<=this.dinosaurs.length-1; i++) {
     dailyVisits += this.dinosaurs[i].guestsAttractedPerDay;
   }
   return dailyVisits;
+};
+
+Park.prototype.visitsPerYear = function () {
+  let yearlyVisits = 0;
+  yearlyVisits = 365 * this.visitsPerDay();
+  return yearlyVisits;
 };
 module.exports = Park;

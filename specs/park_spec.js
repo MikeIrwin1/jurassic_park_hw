@@ -76,4 +76,12 @@ describe('Park', function() {
     const actual = park1.visitsPerDay();
     assert.strictEqual(actual, 34);
   });
+
+  it('should be able to calculate visits per year', function () {
+    park1.addDinosaur(dinosaur1);
+    park1.addDinosaur(dinosaur2);
+    park1.addDinosaur(dinosaur3);
+    const actual = park1.visitsPerYear();
+    assert.strictEqual(actual, 12410)
+  })
 });
