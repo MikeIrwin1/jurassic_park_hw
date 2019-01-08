@@ -7,7 +7,8 @@ const Park = function (name, price) {
 Park.prototype.addDinosaur = function (dinosaur) {
   this.dinosaurs.push(dinosaur);
 };
-Park.prototype.deleteDinosaur = function () {
-  
+Park.prototype.deleteDinosaur = function (dinosaur) {
+  const indexOfDino = this.dinosaurs.indexOf(dinosaur);
+  this.dinosaurs.splice(indexOfDino,1);
 };
 module.exports = Park;
