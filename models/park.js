@@ -14,16 +14,36 @@ Park.prototype.deleteDinosaur = function (dinosaur) {
 
 Park.prototype.mostVisitors = function () {
   let highest = 0;
-  let temp = 0;
+  let tempGuests = 0;
   let dinoIndex = 0;
   for (let i=0; i<=this.dinosaurs.length-1; i++) {
-    temp = this.dinosaurs[i].guestsAttractedPerDay;
+    tempGuests = this.dinosaurs[i].guestsAttractedPerDay;
     tempIndex = i;
-    if (temp > highest) {
-      highest = temp;
+    if (tempGuests > highest) {
+      highest = tempGuests;
       dinoIndex = tempIndex;
     }
   }
   return this.dinosaurs[dinoIndex];
+};
+
+Park.prototype.findSpecies = function (species) {
+  let foundDinos = [];
+  for (let i=0; i<=this.dinosaurs.length-1; i++) {
+    if (this.dinosaurs[i].species === species) {
+      foundDinos.push(this.dinosaurs[i]);
+    }
+  }
+  return foundDinos;
+};
+
+Park.prototype.deleteSpecies = function (species) {
+  let indexOf;
+  for (let i=0; i<=this.dinosaurs.length-1; i++){
+    if (this.dinosaurs.species === species){
+      indexOf = i;
+    }
+  }
+  this.dinosaurs.splice(indexOf,1);
 };
 module.exports = Park;
